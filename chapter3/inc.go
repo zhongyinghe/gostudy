@@ -1,5 +1,6 @@
 package main
 
+//自增只能作为独立语句，不能用于表达式中
 func main() {
 	a := 1
 	a++
