@@ -1,5 +1,9 @@
 package main
 
+import (
+	"testing"
+)
+
 const (
 	max     = 50000000
 	block   = 500
@@ -57,7 +61,14 @@ func testBlock() {
 	<-done
 }
 
-func main() {
-	//test()
-	testBlock()
+func BenchmarkTest(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		test()
+	}
+}
+
+func BenchmarkTestBlock(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		testBlock()
+	}
 }
