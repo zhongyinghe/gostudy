@@ -25,7 +25,7 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
 运行 git clone https://margo.sh/GoSublime ，将代码下载到package目录;
 下载完后，sublime会自动检测到插件并进行安装。如果没有安装go语言环境，会报错
 
-步骤三:打开默认配置文件进行修改
+步骤三:打开默认配置文件进行修改(preference->package setting->gosublime->setting default)
 "gscomplete_enabled": false,
 // Whether or not gsfmt is enabled
 "fmt_enabled": false,
@@ -48,4 +48,14 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
         "GOROOT": "//例如E:/SDK"
     }
 }
+```
+
+### 安装中遇到的问题
+```
+问题1：git下载GoSublime的问题
+错误信息如下:
+error: RPC failed; curl 56 OpenSSL SSL_read: Connection was reset, errno 10054
+解决方法:
+git config --global http.sslVerify "false"
+
 ```
